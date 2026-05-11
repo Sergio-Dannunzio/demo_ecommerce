@@ -1,0 +1,132 @@
+/* Fuentes — actualizar esta URL al cambiar de marca (debe coincidir con fonts.googleUrl en brand.config.js) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Hanken+Grotesk:wght@400;600&family=Cormorant+Garamond:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* ── Warm Neutral — Alison surface scale ── */
+  --color-background:                  #f5f1ec;
+  --color-on-background:               #1a1613;
+
+  --color-surface:                     #f5f1ec;
+  --color-surface-dim:                 #ebe5df;
+  --color-surface-bright:              #ffffff;
+  --color-surface-container-lowest:    #faf8f5;
+  --color-surface-container-low:       #f0ebe4;
+  --color-surface-container:           #ebe5df;
+  --color-surface-container-high:      #e2dcd5;
+  --color-surface-container-highest:   #d9d2ca;
+  --color-on-surface:                  #1a1613;
+  --color-on-surface-variant:          #5c5248;
+  --color-surface-variant:             #e0d9d1;
+  --color-surface-tint:                #6e5e54;
+  --color-inverse-surface:             #302820;
+  --color-inverse-on-surface:          #f5f1ec;
+
+  --color-outline:                     #8a7e76;
+  --color-outline-variant:             #d0c9c2;
+
+  /* ── Primary — Warm ── */
+  --color-primary:                     #c4bdb6;
+  --color-on-primary:                  #1a1613;
+  --color-primary-container:           #1c1814;
+  --color-on-primary-container:        #c4b4a6;
+  --color-primary-fixed:               #e8e3dc;
+  --color-primary-fixed-dim:           #c4bdb6;
+  --color-on-primary-fixed:            #1a1613;
+  --color-on-primary-fixed-variant:    #5c5248;
+  --color-inverse-primary:             #9e8a7e;
+
+  /* ── Secondary — Warm Grey ── */
+  --color-secondary:                   #c4bdb6;
+  --color-on-secondary:                #1a1613;
+  --color-secondary-container:         #8a7e76;
+  --color-on-secondary-container:      #120f0d;
+  --color-secondary-fixed:             #e8e3dc;
+  --color-secondary-fixed-dim:         #c4bdb6;
+  --color-on-secondary-fixed:          #1a1613;
+  --color-on-secondary-fixed-variant:  #4a3e36;
+
+  /* ── Tertiary — Terracotta Warm ── */
+  --color-tertiary:                    #c4a090;
+  --color-on-tertiary:                 #3a1409;
+  --color-tertiary-container:          #2a100a;
+  --color-on-tertiary-container:       #c4a090;
+  --color-tertiary-fixed:              #f0d8cc;
+  --color-tertiary-fixed-dim:          #c4a090;
+  --color-on-tertiary-fixed:           #3a1409;
+  --color-on-tertiary-fixed-variant:   #7a4035;
+
+  /* ── Error ── */
+  --color-error:                       #ffb4ab;
+  --color-on-error:                    #690005;
+  --color-error-container:             #93000a;
+  --color-on-error-container:          #ffdad6;
+
+  /* ── Fonts ── */
+  --font-playfair:  'Playfair Display', serif;
+  --font-hanken:    'Hanken Grotesk', sans-serif;
+  --font-barlow:    'Cormorant Garamond', serif;
+
+  /* ── Brand accent & light UI ── */
+  --color-accent:          #c4816a;
+  --color-accent-text:     #3a1409;
+  --color-header-bg:       #ffffff;
+  --color-header-bg-deep:  #f5f1ec;
+  --color-header-bg-dark:  #f0ebe4;
+  --color-header-border:   #e0d9d1;
+  --color-nav-text:        #1a1613;
+  --color-nav-text-muted:  #6b5e55;
+
+  /* ── Spacing ── */
+  --spacing-base:          8px;
+  --spacing-gutter:        24px;
+  --spacing-margin:        80px;
+  --spacing-section-gap:   120px;
+  --spacing-container-max: 1440px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+  font-family: var(--font-hanken);
+  -webkit-font-smoothing: antialiased;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  user-select: none;
+}
+.material-symbols-outlined.fill {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+.btn-slide-gold {
+  background-image: linear-gradient(to right, var(--color-accent) 50%, var(--color-secondary) 50%);
+  background-size: 200% 100%;
+  background-position: right center;
+  transition: background-position 0.4s ease, color 0.4s ease;
+  color: var(--color-on-secondary);
+}
+.btn-slide-gold:hover {
+  background-position: left center;
+  color: var(--color-accent-text);
+}
+
+.ver-detalle {
+  background-image: linear-gradient(var(--color-secondary), var(--color-secondary));
+  background-position: left 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.35s ease;
+}
+.group:hover .ver-detalle {
+  background-size: 100% 1px;
+}
